@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { forbidExtraProps } from 'airbnb-prop-types';
 import { addEventListener } from 'consolidated-events';
 import objectValues from 'object.values';
 
@@ -15,13 +14,13 @@ const DISPLAY = {
   CONTENTS: 'contents',
 };
 
-const propTypes = forbidExtraProps({
+const propTypes = {
   children: PropTypes.node.isRequired,
   onOutsideClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   useCapture: PropTypes.bool,
   display: PropTypes.oneOf(objectValues(DISPLAY)),
-});
+};
 
 const defaultProps = {
   disabled: false,
